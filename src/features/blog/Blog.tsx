@@ -57,11 +57,6 @@ export default function Blog() {
           <span className="section-label">Technical writing</span>
           <h2>Editorial Knowledge Deck</h2>
         </div>
-
-        <p>
-          A curated collection of technical notes, architecture ideas and
-          practical engineering articles focused on modern web development.
-        </p>
       </div>
 
       <div

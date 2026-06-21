@@ -66,11 +66,6 @@ export default function Skills() {
           <span className="section-label">Optimized stack</span>
           <h2>Tech Orbit System</h2>
         </div>
-
-        <p>
-          Bu versiyada 3D hissə yüngülləşdirilib. Icon və mətnlər Canvas-dan
-          çıxarıldı, ona görə scroll və navbar problemi aradan qalxır.
-        </p>
       </div>
 
       <div className="skills-orbit-layout">

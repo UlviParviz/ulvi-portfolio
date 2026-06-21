@@ -87,11 +87,6 @@ export default function GitHubProjects() {
           <span className="section-label">Projects</span>
           <h2>Repository Vault</h2>
         </div>
-
-        <p>
-          A selected collection of my GitHub repositories, presented as an
-          interactive 3D project vault with live repository metadata.
-        </p>
       </div>
 
       <div className="github-section__layout">

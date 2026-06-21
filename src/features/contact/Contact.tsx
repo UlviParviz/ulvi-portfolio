@@ -46,11 +46,6 @@ export default function Contact() {
           <span className="section-label">Contact</span>
           <h2>Let’s talk</h2>
         </div>
-
-        <p>
-          Have a project idea, collaboration request or technical question?
-          Send me a message and I will get back to you as soon as possible.
-        </p>
       </div>
 
       <div className="contact-section__layout">
