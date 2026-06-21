@@ -1,40 +1,43 @@
-````md
 # Developer Portfolio Website
 
 A modern, responsive and interactive developer portfolio built with **React**, **TypeScript**, **Vite**, **Three.js**, **Framer Motion**, **EmailJS** and the **GitHub API**.
 
-This portfolio includes animated 3D sections, dynamic GitHub repositories, blog articles, timeline, education, contact form and downloadable CV support.
+This portfolio includes animated 3D sections, dynamic GitHub repositories, blog articles, education, timeline, contact form and downloadable CV support.
+
+## Preview
+
+This project is designed for developers who want a modern and customizable personal portfolio website.
 
 ## Features
 
-- Modern responsive portfolio design
-- Dark / light theme support
-- Interactive 3D hero section
-- 3D skills visualization
-- Dynamic GitHub repository section
-- Interactive education section
-- Career timeline section
-- Blog article section
-- Contact form with EmailJS
-- Downloadable CV
-- SEO component support
-- Clean and customizable data structure
+* Modern responsive portfolio design
+* Dark and light theme support
+* Interactive 3D hero section
+* 3D skills visualization
+* Dynamic GitHub repositories
+* Interactive education section
+* Career timeline section
+* Blog articles section
+* Contact form with EmailJS
+* Downloadable CV support
+* SEO component support
+* Clean and customizable data structure
 
 ## Tech Stack
 
-- React
-- TypeScript
-- Vite
-- SCSS
-- Three.js
-- React Three Fiber
-- Drei
-- Framer Motion
-- Axios
-- EmailJS
-- React Router DOM
-- React Toastify
-- GitHub API
+* React
+* TypeScript
+* Vite
+* SCSS
+* Three.js
+* React Three Fiber
+* Drei
+* Framer Motion
+* Axios
+* EmailJS
+* React Router DOM
+* React Toastify
+* GitHub API
 
 ## Getting Started
 
@@ -42,7 +45,7 @@ Clone the project:
 
 ```bash
 git clone https://github.com/UlviParviz/ulvi-portfolio.git
-````
+```
 
 Go to the project directory:
 
@@ -62,6 +65,12 @@ Run the development server:
 npm run dev
 ```
 
+The project will run locally at:
+
+```txt
+http://localhost:5173
+```
+
 ## Environment Variables
 
 Create a `.env` file in the root directory and add the following variables:
@@ -73,7 +82,16 @@ VITE_EMAILJS_PUBLIC_KEY=
 VITE_GITHUB_USERNAME=
 ```
 
-### EmailJS Configuration
+Example:
+
+```env
+VITE_EMAILJS_SERVICE_ID=your_emailjs_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_emailjs_public_key
+VITE_GITHUB_USERNAME=your_github_username
+```
+
+## EmailJS Setup
 
 This project uses **EmailJS** for the contact form.
 
@@ -92,39 +110,54 @@ The contact form uses these template variables:
 {{message}}
 ```
 
-Make sure your EmailJS template contains the same variable names. Otherwise, the submitted form data will not appear correctly in the received email.
+Make sure your EmailJS template uses the same variable names. Otherwise, the submitted form data will not appear correctly in the received email.
 
-## GitHub Projects
+Recommended EmailJS template settings:
 
-The projects section fetches repositories from GitHub using:
+```txt
+Subject:
+New portfolio message from {{from_name}} — {{subject}}
 
-```env
-VITE_GITHUB_USERNAME=
+From Name:
+{{from_name}}
+
+Reply To:
+{{from_email}}
 ```
 
-Add your GitHub username to this variable.
+## GitHub Projects Setup
 
-Example:
+The projects section fetches repositories from GitHub using your GitHub username.
+
+Add your GitHub username to the `.env` file:
 
 ```env
-VITE_GITHUB_USERNAME=your-github-username
+VITE_GITHUB_USERNAME=your_github_username
 ```
 
-Selected repositories are controlled from the portfolio data file.
-
-Open:
+Selected repositories are controlled from:
 
 ```txt
 src/data/portfolio.ts
 ```
 
-Then update the selected repository names according to your own GitHub repositories.
+Example:
+
+```ts
+export const SELECTED_REPOS = [
+  "react-portfolio",
+  "node-api",
+  "typescript-project",
+];
+```
+
+Repository names must match your real GitHub repository names.
 
 ## CV Setup
 
 The CV file is stored inside the `public` folder.
 
-Replace the default file with your own CV:
+Replace the existing CV file with your own CV:
 
 ```txt
 public/cv.pdf
@@ -133,10 +166,9 @@ public/cv.pdf
 Important:
 
 * Keep the file name as `cv.pdf`
-* Replace it with your own CV
-* The download button will automatically use this file
-
-If you want to use a dynamic external CV URL instead, you can update the CV link from the project configuration or portfolio data.
+* Replace the default file with your own CV
+* The CV download button will automatically use this file
+* If you deploy the project and later change the CV, replace the same `cv.pdf` file and redeploy if needed
 
 ## Customization
 
@@ -148,7 +180,7 @@ src/data/portfolio.ts
 
 You can customize:
 
-* Hero content
+* Hero section content
 * About information
 * Skills
 * Education
@@ -157,9 +189,11 @@ You can customize:
 * Selected GitHub repositories
 * Contact information
 * CV button text
-* Section texts
+* Section titles and descriptions
+* Colors and labels
+* Personal profile data
 
-Update this file according to your own profile, experience, projects and design preferences.
+Update this file according to your own experience, projects, education and design preferences.
 
 ## Project Structure
 
@@ -185,19 +219,19 @@ src
 
 ## Available Scripts
 
-Start development server:
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-Build for production:
+Build the project for production:
 
 ```bash
 npm run build
 ```
 
-Preview production build:
+Preview the production build:
 
 ```bash
 npm run preview
@@ -213,7 +247,7 @@ You can deploy this project on:
 * Render
 * GitHub Pages
 
-Before deployment, make sure to add the required environment variables to your hosting platform.
+Before deployment, add the required environment variables to your hosting platform.
 
 Required environment variables:
 
@@ -226,18 +260,17 @@ VITE_GITHUB_USERNAME=
 
 ## Important Notes
 
-Before using the portfolio for yourself:
+Before using this portfolio for yourself:
 
 1. Replace `public/cv.pdf` with your own CV.
-2. Update `src/data/portfolio.ts` with your own information.
-3. Add your GitHub username to `.env`.
-4. Configure EmailJS service, template and public key.
-5. Update selected repository names.
-6. Customize colors, texts and sections if needed.
+2. Keep the CV file name as `cv.pdf`.
+3. Update `src/data/portfolio.ts` with your own information.
+4. Add your GitHub username to `.env`.
+5. Configure EmailJS service, template and public key.
+6. Update selected repository names.
+7. Customize texts, colors and sections if needed.
+8. Add the same environment variables to your deployment platform.
 
 ## License
 
 This project is open for personal portfolio usage. You can customize it and use it for your own developer portfolio.
-
-```
-```
