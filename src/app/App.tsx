@@ -1,4 +1,5 @@
 import Navbar from "../shared/layout/Navbar";
+import ScrollToTop from "../shared/layout/ScrollToTop";
 import SEO from "../shared/seo/SEO";
 import Hero from "../features/hero/Hero";
 import Skills from "../features/skills/Skills";
@@ -14,23 +15,13 @@ export default function App() {
     <>
       <SEO
         title="Ulvi Ismayilov"
-        description="React, TypeScript, Three.js və modern frontend portfolio."
+        description="React, TypeScript, Three.js and modern frontend portfolio."
       />
-
 
       <Navbar />
 
       <main>
-        <ToastContainer
-          position="top-right"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop
-          closeOnClick
-          pauseOnHover
-          draggable
-          theme="colored"
-        />
+      <ScrollToTop />
         <Hero />
         <Education />
         <Skills />
@@ -39,6 +30,17 @@ export default function App() {
         <Blog />
         <Contact />
       </main>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="colored"
+      />
     </>
   );
 }
